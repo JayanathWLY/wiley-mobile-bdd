@@ -1,4 +1,4 @@
-package com.example.wileymobilebdd.service;
+package com.example.wiley.mobile.bdd.service;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 

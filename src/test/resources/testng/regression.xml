@@ -5,7 +5,7 @@
 
     <test name="Login" >
         <classes>
-            <class name="com.example.wileymobilebdd.utils.CucumberTestNGRunner"/>
+            <class name="com.example.wiley.mobile.bdd.utils.CucumberTest"/>
         </classes>
     </test>
 </suite>

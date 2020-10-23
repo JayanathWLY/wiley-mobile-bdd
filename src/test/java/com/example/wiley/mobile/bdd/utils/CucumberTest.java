@@ -1,29 +1,31 @@
-package com.example.wileymobilebdd.utils;
+package com.example.wiley.mobile.bdd.utils;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.example.wiley.mobile.bdd.util.DemoApplication;
+
 @CucumberOptions(
-    features = "src/test/resources/feature",
-    glue = "",
+    features = "src/test/resources/feature/",
+    glue = "com.example.wiley.mobile.bdd.steps",
     tags = {"~@Ignore"},
     format = {
         "pretty",
         "html:target/cucumber-reports/cucumber-pertty",
-        "json:target/cucumber-reports/CucumberTestReport",
-        "return:target/cucumber-reports/return.txt"
-    },
-    plugin = "json:target/cucumber-reports/CucumberTestReport.json"
+        "json:target/cucumber-reports/CucumberTestReport"
+    }
 )
-@SpringBootTest
-public class CucumberTestNGRunner {
+@SpringBootTest(classes = DemoApplication.class)
+public class CucumberTest extends AbstractTestNGSpringContextTests {
 
     private TestNGCucumberRunner testRunner;
 
